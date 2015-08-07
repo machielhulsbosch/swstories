@@ -5,7 +5,7 @@ $active_record = TRUE;
 
 $db['expressionengine']['hostname'] = 'hulsbos.ch';
 $db['expressionengine']['username'] = 'onbeschr';
-$db['expressionengine']['password'] = 'GijsPim1114';
+$db['expressionengine']['password'] = '##########';
 $db['expressionengine']['database'] = 'onbeschr-5';
 $db['expressionengine']['dbdriver'] = 'mysql';
 $db['expressionengine']['pconnect'] = FALSE;
