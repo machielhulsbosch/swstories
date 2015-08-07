@@ -1,0 +1,15 @@
+{if logged_in}
+
+    {exp:stash:embed:user_partials:user_stash stash:user_member_id="{logged_in_member_id}"}
+
+    {exp:stash:get name="user_name" process="end"}
+<!--
+    {exp:channel:entries channel="user" dynamic="no" search:user_memberid="{stash:user_member_id}" parse="inward"}
+
+        {exp:channel:form channel="user" search:user_memberid="{stash:user_member_id}" parse="inward"}
+        <br><br>
+            username:
+            <input name="user_name" type="text" value="{user_name}">
+        {/exp:channel:form} -->
+
+{/if}

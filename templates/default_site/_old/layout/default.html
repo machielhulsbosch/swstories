@@ -1,0 +1,63 @@
+{!--
+   Template: layout/_default [Hidden Template]
+   Author: Bram Smulders
+
+   Default layout using Stash Partial pattern.
+   Embed at start of page and set the following stash variables:
+      * layout_head_title        [string] HTML title
+      * layout_head_description  [string] HTML description
+      * layout_head_css          [string] Extra css files
+      * layout_head_content      [string] Extra content for in the head
+
+      * layout_page_class        [string] Page classname
+      * layout_page_id           [string] Id of active page
+      * layout_body_content      [string] Actual content of the page
+
+      * layout_foot_js           [string] Additional js files
+      * layout_js_onload         [string] Additional onload statements
+
+--}<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="nl"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie10 lt-ie9 lt-ie8" lang="nl"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie10 lt-ie9" lang="nl"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js lt-ie10" lang="nl"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="nl"><!--<![endif]-->
+<head>
+   <meta charset="utf-8">
+   <base href="{global:base_url}" />
+   <title>{exp:stash:layout_head_title} | {site_name}</title>
+   <meta name="description" content="{exp:stash:layout_head_description}" />
+
+   <!-- Default Link -->
+   <link href="public/css/theme.{global:cache_bust}.css" rel="stylesheet" type="text/css" >
+   {exp:stash:layout_head_css}
+   <link href="humans.txt" rel="author" type="text/plain" >
+   <link href="public/gfx/favicon.ico" rel="shortcut icon" >
+   <link href="public/gfx/apple-touch-icon.png" rel="apple-touch-icon-precomposed" >
+
+   <!-- Default Javascript -->
+   <script type="text/javascript" src="public/js/libs/modernizr.min.{global:cache_bust}.js"></script>
+   {exp:stash:layout_head_content}
+</head>
+<body class="{exp:stash:layout_page_class}-page page-id-{exp:stash:layout_page_id}">
+<!--[if lt IE 9] >
+     <div class="notice">De browser die u gebruikt is verouderd en wordt niet langer ondersteund. Gelieve <a href="http://browsehappy.com/">uw browser te upgraden</a> of <a href="http://www.google.com/chromeframe/?redirect=true">Google Chrome Frame</a> te activeren.</div>
+    <![endif]-->
+   {exp:stash:layout_body_content}
+
+   <!-- Footer Javascript -->
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+   <script>window.jQuery || document.write('<script src="public/js/libs/jquery.min.js"><\/script>')</script>
+   <script src="public/js/plugins/plugins.{global:cache_bust}.js"></script>
+   <script src="public/js/site/script.{global:cache_bust}.js"></script>
+   {exp:stash:layout_foot_js}
+   <!--[if (lt IE 9) & (!IEMobile)]> <script type="text/javascript" src="public/js/libs/selectivizr-min.{global:cache_bust}.js"></script><![endif]-->
+   <script>
+      $(document).ready(function() {
+         handleGlobal();
+         {exp:stash:layout_js_onload}
+      });
+   </script>
+</body>
+
+</html>

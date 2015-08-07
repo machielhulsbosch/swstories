@@ -1,0 +1,17 @@
+{if logged_in}
+
+    {exp:stash:set}
+
+        {exp:channel:entries channel="user" dynamic="no" search:user_memberid="{stash:user_member_id}" parse="inward"}
+            {if count == '1'}
+                found user: {user_name}
+                {stash:user_name}{user_name}{/stash:user_name}
+            {/if}
+            {if no_results}
+                no user profile found
+            {/if}
+        {/exp:channel:entries}
+
+    {exp:stash:set}
+
+{/if}

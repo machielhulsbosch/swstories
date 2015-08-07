@@ -1,0 +1,30 @@
+{stash:embed:layout:index}
+
+{exp:stash:layout_content}
+    item
+    <br><br>
+
+    {if logged_in}
+        {exp:channel:form
+            channel="movie"
+            url_title="{segment_2}"
+        }
+          <input name="title" type="text">
+          <input type="submit" value="Submit">
+        {/exp:channel:form}
+    {/if}
+
+    <br><br>
+    {exp:channel:entries
+        channel="movie"
+        dynamic="no"
+        limit="1"
+        url_title="{segment_2}"
+    }
+        {if no_results}
+            {redirect="movies"}
+        {/if}
+
+        {title}
+    {/exp:channel:entries}
+{/exp:stash:layout_content}

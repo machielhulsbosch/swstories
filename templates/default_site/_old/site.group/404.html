@@ -1,0 +1,31 @@
+{!--
+   Template: site.group/404
+--}
+{stash:embed:layout:default}
+
+{!-- Extra css files --}
+   {exp:stash:layout_head_css}{/exp:stash:layout_head_css}
+   {!-- Extra content for in head --}
+   {exp:stash:layout_head_content}{/exp:stash:layout_head_content}
+
+
+   {!-- HTML title --}
+   {exp:stash:layout_head_title}404, page not found{/exp:stash:layout_head_title}
+   {!-- HTML description --}
+   {exp:stash:layout_head_description}Th page cannot be found{/exp:stash:layout_head_description}
+   {!-- ID of active page --}
+   {exp:stash:layout_page_id}404{/exp:stash:layout_page_id}
+   {!-- Page classname --}
+   {exp:stash:layout_page_class}404{/exp:stash:layout_page_class}
+
+
+   {!-- Actual content of the page --}
+   {exp:stash:layout_body_content}
+   404, the page cannot be found
+   {/exp:stash:layout_body_content}
+
+
+   {!-- Additional js files --}
+   {exp:stash:layout_foot_js}{/exp:stash:layout_foot_js}
+   {!-- Additional onload statements --}
+   {exp:stash:layout_js_onload}{/exp:stash:layout_js_onload}

@@ -1,0 +1,15 @@
+{
+  "name": "blocss-grid",
+  "version": "1.0.1",
+  "main": "_grid.scss",
+  "homepage": "https://github.com/Blocss/grid",
+  "_release": "1.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.1",
+    "commit": "8e89640fdc5e936409496459136d32442304af57"
+  },
+  "_source": "git://github.com/Blocss/grid.git",
+  "_target": "~1.0",
+  "_originalSource": "blocss-grid"
+}

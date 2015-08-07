@@ -1,0 +1,23 @@
+{if logged_in}
+    {exp:channel:entries channel="user" dynamic="no" search:user_memberid="{stash:user_member_id}" parse="inward"}
+        found user: {user_name}
+        {if no_results}no user profile found{/if}
+
+        <br><br>
+
+        movies seen:
+
+        {user_movies}
+            {user_movies:title} <br>
+        {/user_movies}
+
+    {/exp:channel:entries}
+
+    {exp:channel:form channel="user" search:user_memberid="{stash:user_member_id}" return="movies"}
+    <br><br>
+        username ({user_memberid}):
+        <input name="title" type="hidden" value="{title}">
+        <input name="user_name" type="text" value="{user_name}">
+    {/exp:channel:form}
+
+{/if}

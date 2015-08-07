@@ -1,0 +1,5 @@
+{if '{segment_3}' == '' OR '{segment_3}' == 'order'}
+    {exp:stash:embed:video_partials:tvshows_overview}
+{if:else}
+    {exp:stash:embed:video_partials:tvshows_item}
+{/if}

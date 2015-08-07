@@ -1,0 +1,27 @@
+Create new user based on logged in account <br>
+[{member_id} | {username}] <br> <br>
+
+
+ {exp:stash:embed:user_partials:user_check stash:user_member_id="{logged_in_member_id}"}
+
+{!--
+{exp:stash:parse}
+    {exp:channel:entries channel="user" dynamic="no" user_memberid="{exp:stash:get name='userid_value'}" parse="inward"}
+        found user: {user_name}
+    {/exp:channel:entries}
+
+    {exp:stash:get name="userid_value"} /
+
+    <br> <br>
+
+    TODO: do not show form when a member / user connection has already been established.
+    {exp:channel:form
+        channel="user"
+    }
+        <input name="title" type="hidden" value="{username}">
+        <input name="user_name" type="hidden" value="{username}">
+        <input name="user_memberid" type="hidden" value="{member_id}">
+        <input type="submit" value="Create user entry">
+    {/exp:channel:form}
+{/exp:stash:parse}
+ --}

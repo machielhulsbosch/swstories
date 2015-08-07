@@ -1,0 +1,19 @@
+{stash:embed:layout:index}
+
+{exp:stash:layout_content}
+    <h1>item</h1>
+
+    <br><br>
+    {exp:channel:entries
+        channel="tvshow"
+        dynamic="no"
+        limit="1"
+        url_title="{segment_3}"
+    }
+        {if no_results}
+            {redirect="video/tvshows"}
+        {/if}
+
+        {title}
+    {/exp:channel:entries}
+{/exp:stash:layout_content}

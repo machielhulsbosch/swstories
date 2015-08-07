@@ -1,0 +1,5 @@
+USER CHECK {stash:user_member_id}
+
+    {exp:channel:entries channel="user" dynamic="no" search:user_memberid="{stash:user_member_id}" parse="inward"}
+        found user: {user_name}
+    {/exp:channel:entries}

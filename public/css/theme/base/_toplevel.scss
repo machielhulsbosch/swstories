@@ -1,0 +1,66 @@
+/*----------------------------------------------------------------------------*\
+    $TOPLEVEL
+    html, body, .wrapper
+\*----------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------*\
+    $CONTENTS
+\*----------------------------------------------------------------------------*/
+
+    /*
+    CONTENTS................You're reading it, LOL
+    MODULE..................Includes base module & submodules
+    STATE...................States the module can be in
+    THEME...................Theming of the module
+    */
+
+
+
+
+
+/*----------------------------------------------------------------------------*\
+    $MODULE
+\*----------------------------------------------------------------------------*/
+
+    /* commented backslash hack \*/
+    html, body { height: 100%; }
+    /* end hack */
+    * html .wrapper { height: 100%; }
+
+    body{
+        position: relative;
+        min-height: 100%;
+        color: #FFF;
+    }
+
+
+    /**
+     * Make wrapper 100% height
+     */
+    .wrapper {
+        position: relative;
+        min-height: 100%;
+        height: auto;
+        width: 100%;
+        margin: 0 auto;
+        z-index: 3;
+
+        &:after{
+            position: absolute;
+            content: '';
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: url(../gfx/_templating/bg__mosespa.webp);
+            background-size: cover;
+            filter: grayscale(.75) brightness(0.75);
+            -webkit-filter: grayscale(.75) brightness(0.75);
+        }
+    }
+
+        .site-width{
+            margin: 0 auto;
+            @include rem(width, $site-width);
+        }
+

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="nl"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie10 lt-ie9 lt-ie8" lang="nl"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie10 lt-ie9" lang="nl"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js lt-ie10" lang="nl"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="nl"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <base href="{global:base_url}" />
+    <title>Star Wars Stories</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+
+    <!-- Default Link -->
+    <link href="public/css/theme.20140809.css" rel="stylesheet" type="text/css" >
+    <link href="humans.txt" rel="author" type="text/plain" >
+    <link href="public/gfx/favicon.ico" rel="shortcut icon" >
+    <link href="public/gfx/apple-touch-icon.png" rel="apple-touch-icon-precomposed" >
+
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- Default Javascript -->
+    <script type="text/javascript" src="public/lib/modernizr-shim/modernizr.min.20131002.js"></script>
+</head>
+<body>
+    <!--[if lt IE 9]>
+        <div class="notice">You are using an outdated browser, which can result in this site not displaying correctly. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a>.</div>
+    <![endif]-->
+    <div class="wrapper arrange">
+        <header class="header arrange__size-fit" style="width: 240px;">
+            <a href="" class="logo" >
+                <img src="public/gfx/logo.svg" alt="">
+            </a>
+            <div class="m-menu-main">
+                <ul class="nav">
+                    <li>
+                        <a href="">all</a>
+                    </li>
+                    <li>
+                        <a href="video">video</a>
+                        <ul>
+                            <li>
+                                <a href="video/movies">movies</a>
+                            </li>
+                            <li>
+                                <a href="video/tvshows">tv shows</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="literature">literature</a>
+                        <ul>
+                            <li>
+                                <a href="literature/novels">novels</a>
+                            </li>
+                        </ul>
+                    </li>
+                    {!-- <li>
+                        <a href="other">other</a>
+                    </li> --}
+                </ul>
+            </div>
+        </header>
+
+        <section class="layer layer--main arrange__size-fill">
+            {exp:stash:layout_content}
+        </section>
+{!--
+        <footer>
+            <div class="site-width">
+                footer
+            </div>
+        </footer> --}
+    </div>
+</body>

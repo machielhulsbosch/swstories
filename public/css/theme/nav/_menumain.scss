@@ -1,0 +1,129 @@
+/*----------------------------------------------------------------------------*\
+    $MENUMAIN
+\*----------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------*\
+    $CONTENTS
+\*----------------------------------------------------------------------------*/
+
+    /*
+    CONTENTS................You're reading it, LOL
+    MODULE..................Includes base module & submodules
+    STATE...................States the module can be in
+    THEME...................Theming of the module
+    */
+
+
+
+
+
+/*----------------------------------------------------------------------------*\
+    $MODULE
+\*----------------------------------------------------------------------------*/
+
+    .m-menu-main{
+        // background: rgba(#FFF, .25);
+        // @include rem(margin, 0 $space);
+
+        ul{
+            @extend .nav;
+            @extend .nav--stacked;
+
+            li{
+                position: relative;
+
+                &:hover{
+
+                    a{
+                        // display: block;
+                        // color: #000;
+                    }
+
+                    ul{
+                        // display: block;
+                    }
+                }
+
+                a{
+                    @extend .islet;
+                    @extend .flatten;
+                    color: #FFF;
+                    text-decoration: none;
+
+                    &:hover{
+                        outline: 1px solid rgba(#FFF, .25);
+                    }
+                }
+
+                ul{
+                    // display: none;
+                    // position: absolute;
+                    // left: 0;
+                    // background: rgba(#FFF, .75);
+                    // @include rem(top, $space*2);
+
+                    li{
+
+                        a{
+                            @include rem(padding-left, $space);
+                            // white-space: nowrap;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+
+/*----------------------------------------------------------------------------*\
+    $STATE
+\*----------------------------------------------------------------------------*/
+
+    /* Media Queries
+       The default media queries shipped with Blocss:
+       Uncomment the ones you need
+    \*------------------------------------------------------------------------*/
+
+        /**
+         * Desk-wide state
+         */
+        //@include media-query(gt-desk){}
+
+
+        /**
+         * Desk state
+         */
+        //@include media-query(desk){}
+
+
+        /**
+         * Portable state
+         */
+        //@include media-query(lt-desk){}
+
+
+        /**
+         * Lap state
+         */
+        //@include media-query(lap){}
+
+
+        /**
+         * Lapup state
+         */
+        //@include media-query(gt-palm){}
+
+
+        /**
+         * Palm state
+         */
+        //@include media-query(palm){}
+
+
+
+
+
+/*----------------------------------------------------------------------------*\
+    $THEME
+\*----------------------------------------------------------------------------*/

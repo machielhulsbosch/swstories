@@ -1,0 +1,43 @@
+{stash:embed:layout:index}
+
+{exp:stash:embed:video_partials:user stash:user_member_id="{logged_in_member_id}"}
+
+{exp:stash:set parse_conditionals="yes"}
+    {if '{segment_4}' == 'title'}
+        {stash:tvshow_order}title{/stash:tvshow_order}
+    {if:elseif '{segment_4}' == 'timeline'}
+        {stash:tvshow_order}tvshow_timeline{/stash:tvshow_order}
+    {if:else}
+        {stash:tvshow_order}tvshow_release{/stash:tvshow_order}
+    {/if}
+{/exp:stash:set}
+
+{exp:stash:layout_content}
+    <h1>tv shows: overview</h1>
+
+    order by <a href="{segment_1}/{segment_2}">release</a> | <a href="{segment_1}/{segment_2}/order/timeline">timeline</a> | <a href="{segment_1}/{segment_2}/order/title">title</a>
+
+    <br><br>
+
+    ({stash:tvshow_order})
+    <ul>
+    {exp:channel:entries
+        channel="tvshow"
+        dynamic="no"
+        orderby="{stash:tvshow_order}"
+        sort="asc"
+    }
+        <li>
+            <a href="{segment_1}/{segment_2}/{url_title}">
+                {if tvshow_title}
+                    {tvshow_title}
+                {if:else}
+                    {title}
+                {/if}
+                [{tvshow_timeline}]
+                ({tvshow_release format="%Y"})
+            </a>
+        </li>
+    {/exp:channel:entries}
+    </ul>
+{/exp:stash:layout_content}

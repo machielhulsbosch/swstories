@@ -1,0 +1,44 @@
+{!--
+   Template: layout/index
+   Author: Bram Smulders
+
+   Starting template for a default page.
+   When creating a new template, you can use a copy of this as a starting point.
+--}
+{stash:embed:layout:default}
+
+{exp:channel:entries channel="page" require_entry="yes"}
+
+   {!-- If no results redirect to 404 page --}
+   {if no_results}
+      {redirect="404"}
+   {/if}
+
+   {!-- Extra css files --}
+   {exp:stash:layout_head_css}{/exp:stash:layout_head_css}
+   {!-- Extra content for in head --}
+   {exp:stash:layout_head_content}{/exp:stash:layout_head_content}
+
+
+   {!-- HTML title --}
+   {exp:stash:layout_head_title}{title}{/exp:stash:layout_head_title}
+   {!-- HTML description --}
+   {exp:stash:layout_head_description}{title}{/exp:stash:layout_head_description}
+   {!-- ID of active page --}
+   {exp:stash:layout_page_id}{entry_id}{/exp:stash:layout_page_id}
+   {!-- Page classname --}
+   {exp:stash:layout_page_class}{url_title}{/exp:stash:layout_page_class}
+
+
+   {!-- Actual content of the page --}
+   {exp:stash:layout_body_content}
+   Add content here
+   {/exp:stash:layout_body_content}
+
+
+   {!-- Additional js files --}
+   {exp:stash:layout_foot_js}{/exp:stash:layout_foot_js}
+   {!-- Additional onload statements --}
+   {exp:stash:layout_js_onload}{/exp:stash:layout_js_onload}
+
+{/exp:channel:entries}
