@@ -21,6 +21,21 @@
     $MODULE
 \*----------------------------------------------------------------------------*/
 
+    .nav-toggle{}
+
+    .nav-toggle--input{
+        // display: none;
+    }
+
+    .nav-toggle--input--0:checked ~ .wrapper .nav-toggle--label--0,
+    .nav-toggle--input--1:checked ~ .wrapper .nav-toggle--label--1{
+        display: none;
+    }
+
+    .nav-toggle--label{
+        color: #333;
+    }
+
     .m-menu-main{
         // background: rgba(#FFF, .25);
         // @include rem(margin, 0 $space);
