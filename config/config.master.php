@@ -255,13 +255,13 @@ if (isset($config))
         $assign_to_config['global_vars'] = array();
     }
 
-    // Start our array with environment variables. This gives us {global:env} and {global:env_full} tags for our templates.
-    $master_global = array(
-        'global:env'        => ENV,
-        'global:env_full'   => ENV_FULL,
-        'global:base_url'   => $env_config['base_url'],
-        'global:cache_bust' => '20131002',
-    );
+    // // Start our array with environment variables. This gives us {global:env} and {global:env_full} tags for our templates.
+    // $master_global = array(
+    //     'global:env'        => ENV,
+    //     'global:env_full'   => ENV_FULL,
+    //     'global:base_url'   => $env_config['base_url'],
+    //     'global:cache_bust' => '20131002',
+    // );
 
 
 

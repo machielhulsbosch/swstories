@@ -21,7 +21,7 @@ $env_config['cp_url'] = 'http://'.$_SERVER['HTTP_HOST'].'/project/swstories/admi
 
 // use augmented mysql driver, for the extra capabilities
 // See also the configs below
-$env_db['dbdriver'] = 'qforma_mysql';
+// $env_db['dbdriver'] = 'qforma_mysql';
 
 /**
  * DB Changelog config
@@ -48,6 +48,15 @@ $env_config['db_changelog_loc'] = 'db/log/_current.log';
  */
 $env_config['db_autobackup_use'] = true;
 $env_config['db_autobackup_dir'] = 'db/autobackup/';
+
+    // Start our array with environment variables. This gives us {global:env} and {global:env_full} tags for our templates.
+    $master_global = array(
+        'global:env'        => ENV,
+        'global:env_full'   => ENV_FULL,
+        'global:base_url'   => $env_config['base_url'],
+        'global:cache_bust' => '',
+    );
+
 
 /* End of file config.local.php */
 /* Location: ./config/config.local.php */

@@ -17,5 +17,13 @@ $env_global['global:google_analytics'] = 'UA-XXXXXXXX-XX';
 
 $env_config['cp_url'] = 'http://www.your-project.nl/admin.php';
 
+    // Start our array with environment variables. This gives us {global:env} and {global:env_full} tags for our templates.
+    $master_global = array(
+        'global:env'        => ENV,
+        'global:env_full'   => ENV_FULL,
+        'global:base_url'   => $env_config['base_url'],
+        'global:cache_bust' => '20131002',
+    );
+
 /* End of file config.prod.php */
 /* Location: ./config/config.prod.php */
