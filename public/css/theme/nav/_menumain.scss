@@ -24,40 +24,52 @@
     .nav-toggle{}
 
     .nav-toggle--input{
-        // display: none;
+        display: none;
     }
 
     .nav-toggle--input--0:checked ~ .wrapper .nav-toggle--label--0,
     .nav-toggle--input--1:checked ~ .wrapper .nav-toggle--label--1{
-        display: none;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .nav-toggle--input--1:checked ~ .wrapper .m-menu-main{
+        @include prefixer(transform, translate(0, 0), webit spec);
     }
 
     .nav-toggle--label{
         color: #333;
+        @include prefixer(transition, opacity .3s ease, webkit spec);
+    }
+
+    .nav-toggle--label--0{
+        position: fixed;
+        z-index: 2;
+        background: #666;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
     }
 
     .m-menu-main{
-        // background: rgba(#FFF, .25);
-        // @include rem(margin, 0 $space);
+        position: absolute;
+        z-index: 3;
+        top: 0;
+        left: 0;
+        background: #000;
+        @include rem(max-width, 240px);
+        @include prefixer(transform, translate(-100%, 0), webit spec);
+        @include prefixer(transition, (transform .3s ease, -webkit-transform .3s ease), webkit spec);
 
         ul{
             @extend .nav;
             @extend .nav--stacked;
+        }
 
             li{
                 position: relative;
-
-                &:hover{
-
-                    a{
-                        // display: block;
-                        // color: #000;
-                    }
-
-                    ul{
-                        // display: block;
-                    }
-                }
+            }
 
                 a{
                     @extend .islet;
@@ -70,23 +82,7 @@
                     }
                 }
 
-                ul{
-                    // display: none;
-                    // position: absolute;
-                    // left: 0;
-                    // background: rgba(#FFF, .75);
-                    // @include rem(top, $space*2);
 
-                    li{
-
-                        a{
-                            @include rem(padding-left, $space);
-                            // white-space: nowrap;
-                        }
-                    }
-                }
-            }
-        }
     }
 
 
