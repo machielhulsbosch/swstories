@@ -31,6 +31,7 @@
         position: relative;
         min-height: 100%;
         color: #FFF;
+        background: #000;
     }
 
 
@@ -43,7 +44,8 @@
         height: auto;
         width: 100%;
         margin: 0 auto;
-        z-index: 3;
+        z-index: 0;
+        @include rem(padding-top, $header-palm*$space);
 
         &:after{
             position: absolute;
@@ -61,6 +63,7 @@
 
         .site-width{
             margin: 0 auto;
-            @include rem(width, $site-width);
+            @include rem(max-width, $site-width+$space);
+            @include rem(padding, 0 $space-half);
         }
 

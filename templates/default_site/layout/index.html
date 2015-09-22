@@ -26,10 +26,12 @@
     <input type="radio" name="nav-toggle" class="nav-toggle--input nav-toggle--input--1" id="nav-toggle--activate"  >
     <input type="radio" name="nav-toggle" class="nav-toggle--input nav-toggle--input--0" id="nav-toggle--deactivate" checked>
 
-    <div class="wrapper arrange">
+    <header class="header">
 
         <label class="nav-toggle--label nav-toggle--label--1" for="nav-toggle--activate">activate</label>
         <label class="nav-toggle--label nav-toggle--label--0" for="nav-toggle--deactivate">deactivate</label>
+
+        logo
 
         <nav class="m-menu-main">
             <ul class="nav">
@@ -38,6 +40,10 @@
                 <li><a href="#">3</a></li>
             </ul>
         </nav>
+
+    </header>
+
+    <div class="wrapper arrange">
 
         <section class="layer layer--main arrange__size-fill">
             {exp:stash:layout_content}

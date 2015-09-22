@@ -23,11 +23,49 @@
 \*----------------------------------------------------------------------------*/
 
     .header{
-        position: relative;
+        position: fixed;
         z-index: 1;
-        background: rgba(#222,.9);
-        box-shadow: 0 0 $space rgba(#000,.5);
-        @include rem(padding, $space);
+        top: 0;
+        left: 0;
+        width: 100%;
+        // overflow: hidden;
+        @include rem(height, $header-palm*$space);
+
+        &:before{
+            content: '';
+            position: absolute;
+            z-index: -1;
+            display: block;
+            bottom: -20px;
+            left: 50%;
+            border-radius: 50%;
+            background: radial-gradient(
+                circle closest-side,
+                rgba(#FFF, .9) 98%,
+                rgba(#FFF, 0) 100%
+            );
+            @include rem(width, 3020px);
+            @include rem(height, 3020px);
+            @include prefixer(transform, translateX(-50%), webkit spec);
+        }
+
+        &:after{
+            content: '';
+            position: absolute;
+            z-index: 0;
+            display: block;
+            bottom: 0;
+            left: 50%;
+            border-radius: 50%;
+            background: radial-gradient(
+                circle closest-side,
+                #FFA461 95%,
+                #FFF 100%
+            );
+            @include rem(width, 3000px);
+            @include rem(height, 3000px);
+            @include prefixer(transform, translateX(-50%), webkit spec);
+        }
     }
 
         .logo{
@@ -37,6 +75,7 @@
                 @include rem(width, $space*8);
             }
         }
+
 
 
 
